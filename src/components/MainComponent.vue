@@ -5,6 +5,10 @@
             <div class="box-hero">
                 <img src="/images/homepage-hero-background.jpg" alt="">
             </div>
+            <div class="hero-content d-flex flex-column">
+                <h1>Drive with Avada</h1>
+                <span>We offer the finest driving tuition money can buy</span>
+            </div>
         </section>
         <!-- FIRST LESSON -->
         <section class="first-lesson d-flex justify-content-center align-items-center">
@@ -58,16 +62,36 @@ import { store } from '../data/store';
 </script>
 
 <style lang="scss" scoped>
-    .box-hero{
-        height: 720px;
-        width: 100%;
-        border: 1px solid red;
-        img{
-            width: 100%;
-            height: 100%;
+    .hero{
+        overflow: hidden;
+        .box-hero{
+            height: 720px;
+            min-width: 2000px;
             border: 1px solid red;
+            img{
+                width: 100%;
+                height: 100%;
+                border: 1px solid red;
+            }
+        }
+        .hero-content{
+            position: absolute;
+            left: 300px;
+            h1{
+                color: white;
+                font-size: 4rem;
+                font-weight: 700;
+                margin-top: 120px;
+            }
+            span{
+                color: white;
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
         }
     }
+    
     .first-lesson{
         height: 650px;
         border: 1px solid red;
