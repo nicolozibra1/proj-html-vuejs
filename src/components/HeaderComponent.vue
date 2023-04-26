@@ -8,7 +8,7 @@
    <header>
         <div class="container h-100 d-flex justify-content-between align-items-center">
             <div class="box-logo">
-                LOGO
+                <img src="/images/avada-drivers-logo-1x.png" alt="">
             </div>
             <div class="navbar">
                 NAVBAR
@@ -46,12 +46,23 @@ import { store } from '../data/store';
         &:hover{
             cursor: pointer;
         }
-        
-
     }
 
     header{
         height: 120px;
+        width: 100%;
         border: 1px solid red;
+        position: absolute;
+        top: 50px;
+        background-color: rgba(66, 66, 66, 0.521);
+
+        .box-logo{
+            width: 250px;
+            height: 50px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 </style>

@@ -3,7 +3,7 @@
         <!-- HERO -->
         <section class="hero d-flex justify-content-center align-items-center">
             <div class="box-hero">
-                HERO
+                <img src="/images/homepage-hero-background.jpg" alt="">
             </div>
         </section>
         <!-- FIRST LESSON -->
@@ -58,9 +58,15 @@ import { store } from '../data/store';
 </script>
 
 <style lang="scss" scoped>
-    .hero{
-        height: 750px;
+    .box-hero{
+        height: 720px;
+        width: 100%;
         border: 1px solid red;
+        img{
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+        }
     }
     .first-lesson{
         height: 650px;
