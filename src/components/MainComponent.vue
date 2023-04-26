@@ -53,6 +53,7 @@
         </div>
         <!-- COURSES -->
         <section class="courses">
+            <!-- CHOOSE-COURSE -->
             <div class="choose-course">
                 <div class="box-background-course">
                     <img class="background" src="/images/promise-background.jpg" alt="">
@@ -80,10 +81,35 @@
                         </div>
                     </div>
                 </div>
-                CHOOSE YOUR FAVORITE COURSE
             </div>
-            <div class="statics container text-center">
-                COURSE STATICS
+            <!-- STATISTICS -->
+            <div class="statistics container text-center">
+                <div class="row h-100 px-5 py-4 m-0 container d-flex justify-content-center">
+                    <div class="col-4 h-100 p-2">
+                        <div class="card">
+                            <div class="circle d-flex justify-content-center align-items-center">
+                                <span>95%</span>
+                            </div>
+                            <h6>pass rate</h6>
+                        </div>
+                    </div>
+                    <div class="col-4 h-100 p-2">
+                        <div class="card">
+                            <div class="circle d-flex justify-content-center align-items-center">
+                                <span>100%</span>
+                            </div>
+                            <h6>referral rate</h6>
+                        </div>
+                    </div>
+                    <div class="col-4 h-100 p-2">
+                        <div class="card">
+                            <div class="circle d-flex justify-content-center align-items-center">
+                                <span>0%</span>
+                            </div>
+                            <h6>accident rate</h6>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="instructors container text-center">
                 OUR INSTRUCTORS
@@ -334,9 +360,40 @@ import { store } from '../data/store';
                 }
             }
         }
-        .statics{
+        .statistics{
             height: 500px;
-            border: 1px solid blue;
+            margin-top: -180px;
+            .card{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                width: 100%;
+                height: 100%;
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
+                border-bottom-right-radius: 12px;
+                border-bottom-left-radius: 12px;
+                box-shadow: rgba(100, 100, 111, 0.5) 0px 15px 10px 0px, $mygreen 0 -8px ;
+                .circle{
+                    border: 10px solid $mylightGrey;
+                    border-radius: 50%;
+                    height: 220px;
+                    width: 220px;
+                    span{
+                        font-size: 2.5rem;
+                        font-weight: 600;
+                        color: $mygrey;
+                    }
+                }
+                h6{
+                    margin-top: 0px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: $mygrey;
+                }
+            }
         }
         .instructors{
             height: 800px;
@@ -345,7 +402,7 @@ import { store } from '../data/store';
     }
     .testimonials{
         height: 850px;
-        border: 1px solid red;;
+        border: 1px solid red;
     }
     .latest-news{
         height: 850px;
