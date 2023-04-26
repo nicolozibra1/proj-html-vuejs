@@ -39,7 +39,6 @@ import { store } from '../data/store';
     .call2action{
         height: 50px;
         background-color: $mydarkGrey;
-        border: 1px solid red;
         span{
             color: $mygrey;
             font-size: 0.9rem;
@@ -53,7 +52,6 @@ import { store } from '../data/store';
     header{
         height: 120px;
         width: 100%;
-        border: 1px solid red;
         position: absolute;
         top: 50px;
         background-color: rgba(66, 66, 66, 0.521);
@@ -90,8 +88,5 @@ import { store } from '../data/store';
             }
             
         }
-    }
-    .debug{
-        border: 1px solid yellow;
     }
 </style>

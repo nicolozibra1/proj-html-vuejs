@@ -11,8 +11,27 @@
             </div>
         </section>
         <!-- FIRST LESSON -->
-        <section class="first-lesson d-flex justify-content-center align-items-center">
-            FIRST LESSON
+        <section class="first-lesson">
+            <row class="container h-100 d-flex justify-content-center">
+                <div class="col-6 h-100 d-flex flex-column justify-content-center">
+                    <h1 class="mt-3">Get Behind The Wheel</h1>
+                    <p class="fs-4 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper.</p>
+                    <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper. Fusce et ultrices libero, at suscipit lacus. Sed vitae fringilla nibh. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper. Fusce et ultrices libero, at suscipit lacus. Sed vitae fringilla nibh.</p>
+                </div>
+                <div class="col-6 px-5">
+                    <div class="card d-flex flex-column justify-content-center align-items-center">
+                        <h2>First Lesson Free!</h2>
+                        <p class="text-center px-5">When you make a block booking with us your first lesson is included free.</p>
+                        <form @submit.prevent class="d-flex flex-column align-items-center justify-content-center">
+                            <input type="text" placeholder="Your Name*">
+                            <input type="email" placeholder="Email*">
+                            <input type="text" placeholder="Telephone">
+                            <input type="text" placeholder="Location">
+                            <button>request a callback</button>
+                        </form>
+                    </div>
+                </div>
+            </row>
         </section>
         <!-- CALL2ACTION -->
         <div class="call2action d-flex justify-content-center align-items-center">
@@ -62,16 +81,15 @@ import { store } from '../data/store';
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/styles/partials/variables' as *;
     .hero{
         overflow: hidden;
         .box-hero{
             height: 720px;
             min-width: 2000px;
-            border: 1px solid red;
             img{
                 width: 100%;
                 height: 100%;
-                border: 1px solid red;
             }
         }
         .hero-content{
@@ -94,7 +112,49 @@ import { store } from '../data/store';
     
     .first-lesson{
         height: 650px;
-        border: 1px solid red;
+        h1{
+            font-weight: 700;
+            color: $mydarkGrey;
+        }
+        p{
+            color: $mygrey;
+            padding-right: 50px;
+        }
+        .card{
+            padding: 50px 40px;
+            border-radius: 15px;
+            margin-top: -30px;
+            box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+            h2{
+            color: $mygreen;
+            font-weight: 700;
+            margin-bottom: 30px;
+            }
+            form{
+                margin-top: 40px;
+                gap: 30px;
+                width: 100%;
+                input{
+                    width: 100%;
+                    height: 50px;
+                    background-color: $mylightGrey;
+                    border: 1px solid lightgrey;
+                    border-radius: 5px;
+                    padding-left: 15px;
+                    font-size: 0.9rem;
+                }
+                button{
+                    color: white;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    background-color: $mygreen;
+                    border: transparent;
+                    padding: 10px 30px;
+                    border-radius: 20px;
+                }
+            }
+        }
+        
     }
     .call2action{
         height: 250px;
@@ -124,5 +184,8 @@ import { store } from '../data/store';
     .latest-news{
         height: 850px;
         border: 1px solid red;
+    }
+    .debug{
+        border: 1px solid blue;
     }
 </style>
