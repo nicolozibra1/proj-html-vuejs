@@ -53,7 +53,33 @@
         </div>
         <!-- COURSES -->
         <section class="courses">
-            <div class="choose-course container">
+            <div class="choose-course">
+                <div class="box-background-course">
+                    <img class="background" src="/images/promise-background.jpg" alt="">
+                    <img class="svg" src="/images/driving-triangle.svg" alt="">
+                </div>
+                <div class="row p-0 m-0 container">
+                    <div class="col-4 p-0">
+                        <div class="card h-100 d-flex flex-column align-items-center justify-content-around" id="card-custom">
+                            <h1 class="my-4">Courses</h1>
+                            <p class="text-center my-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper.</p>
+                            <button id="course-info" class="my-4">course infomation</button>
+                            <div class="tringle"></div>
+                            <span>new</span>
+                        </div>
+                    </div>
+                    <div class="col-8 d-flex justify-content-center align-items-center gap-3">
+                        <div class="card pe-4 bg-transparent border-0" v-for="course in store.courses">
+                            <div class="card-image">
+                                <img :src="'/images/' + course.image" alt="">
+                            </div>
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <h5>{{ course.name }}</h5>
+                                <button>learn more</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 CHOOSE YOUR FAVORITE COURSE
             </div>
             <div class="statics container text-center">
@@ -214,11 +240,99 @@ import { store } from '../data/store';
     }
     .courses{
         height: 1900px;
-        border: 1px solid red;
 
         .choose-course{
-            height: 600px;
-            border: 1px solid blue;
+            height: 700px;
+            position: relative;
+            .box-background-course{
+                height: 100%;
+                .background{
+                    height: 80%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: bottom;
+                }
+                .svg{
+                    width: 100%;
+                    height: 120px;
+                }
+            }
+            .row{
+                position: absolute;
+                top:40%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                #card-custom{
+                    margin-top: -75px;
+                    padding: 100px 50px;
+                    position: relative;
+                    overflow: hidden;
+                    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+                    h1{
+                        font-weight: 700;
+                        color: $mydarkGrey;
+                    }
+                    p{
+                        color: $mygrey;
+                    }
+                    #course-info{
+                        color: $mywhite;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        background-color: $mygreen;
+                        padding: 10px 30px;
+                        border-radius: 20px;
+                        border: transparent
+                    }
+                    .tringle{
+                        width: 0; 
+                        height: 0; 
+                        border-left: 70px solid transparent;
+                        border-right: 70px solid transparent; 
+                        border-bottom: 70px solid $mygreen;
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        top: -12px;
+                        left: -50px;
+                    }
+                    span{
+                            text-transform: uppercase;
+                            transform: rotate(-45deg);
+                            font-weight: 700;
+                            font-size: 1.2rem;
+                            position: absolute;
+                            top:15px;
+                            left: 8px;
+                            color: white;
+                        }
+                }
+                .card-image{
+                    width: 200px;
+                    height: 200px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .card-body{
+                    flex-grow: unset;
+                    h5{
+                        color: $mygrey;
+                        text-transform: capitalize;
+                        font-weight: 700;
+                    }
+                    button{
+                        background-color: transparent;
+                        border: 2px solid $mygrey;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        font-size: 0.7rem;
+                        color: $mygrey;
+                        padding: 5px 15px;
+                        border-radius: 20px;
+                    }
+                }
+            }
         }
         .statics{
             height: 500px;
