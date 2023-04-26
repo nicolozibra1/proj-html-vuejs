@@ -34,8 +34,22 @@
             </row>
         </section>
         <!-- CALL2ACTION -->
-        <div class="call2action d-flex justify-content-center align-items-center">
-            CALL2ACTION
+        <div class="call2action">
+            <div class="box-background">
+                <img src="/images/horizontal-cta-background.jpg" alt="">
+            </div>
+            <div class="container content">
+                <div class="row container d-flex justify-content-center align-items-center">
+                    <div class="col-6 d-flex flex-column justify-content-center">
+                        <h1>Start Learning to Drive Today</h1>
+                        <h5 class="pt-2">Give us a call to schedule your fist driving lesson</h5>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <span><i class="fa-solid fa-phone-flip pe-2"></i> 1-800-555-555 </span>
+                    </div>
+                </div>
+                
+            </div>
         </div>
         <!-- COURSES -->
         <section class="courses">
@@ -157,8 +171,46 @@ import { store } from '../data/store';
         
     }
     .call2action{
-        height: 250px;
-        border: 1px solid red;
+        overflow: hidden;
+        position: relative;
+        &:hover{
+            cursor: pointer;
+        }
+        .box-background{
+            height: 250px;
+            min-width: 2000px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }   
+        }
+        .content{
+            color: white;  
+            .row{
+                position: absolute;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                h1{
+                    font-weight: 700;
+                }
+                h5{
+                    font-weight: 700;
+                    letter-spacing: 1px;;
+                }
+                span{
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    padding-left: 150px;
+                    i{
+                        margin-right: 30px;
+                    }
+                }
+            } 
+        }
+        
     }
     .courses{
         height: 1900px;
