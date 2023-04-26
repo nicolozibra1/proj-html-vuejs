@@ -11,10 +11,12 @@
                 <img src="/images/avada-drivers-logo-1x.png" alt="">
             </div>
             <div class="navbar">
-                NAVBAR
+                <ul v-for="link in store.navLinks" class="list-unstyled mt-3">
+                    <li class="text-white"><a href="#">{{ link }}</a></li>
+                </ul>
             </div>
             <div class="book-now">
-                BOOK-NOW
+                <button>book now</button>
             </div>
         </div>
    </header>
@@ -57,12 +59,39 @@ import { store } from '../data/store';
         background-color: rgba(66, 66, 66, 0.521);
 
         .box-logo{
-            width: 250px;
-            height: 50px;
+            width: 280px;
+            height: 60px;
             img{
                 width: 100%;
                 height: 100%;
             }
         }
+        .navbar{
+            li{
+                padding-right: 50px;
+            }
+            a{
+                color: white;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+        }
+        .book-now{
+            button{
+                color: white;
+                text-transform: uppercase;
+                font-weight: 700;
+                background-color: $mygreen;
+                border-radius: 20px;
+                border: transparent;
+                padding: 10px 30px;;
+                
+            }
+            
+        }
+    }
+    .debug{
+        border: 1px solid yellow;
     }
 </style>
