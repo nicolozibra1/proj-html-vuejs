@@ -98,5 +98,11 @@ export const store = reactive({
             email: 'info@your-domain.com',
             link: 'Theme-Fusion.com'
         }
+    ],
+    coursesLinks: [
+       'Pass Plus',
+       'Intensive Course',
+       'Automatic',
+       'Instructor Training' 
     ]
 })
