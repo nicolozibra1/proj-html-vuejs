@@ -178,10 +178,20 @@
                 <img src="/images/latestnews-bottom.png" alt="" id="img-bottom">
             </div>
         </section>
-        <!-- CALL2ACTION -->
-        <div class="call2action d-flex justify-content-center align-items-center">
-            CALL2ACTION
-        </div>
+        <!-- EMAIL FORM -->
+        <section class="email-form d-flex justify-content-center align-items-center">
+            <div class="background-email">
+                <img src="/images/newsletter_background.jpg" alt="">
+                <div class="content container d-flex flex-column justify-content-center align-items-center gap-4">
+                    <h2>Sign up to our Newsletter</h2>
+                    <form class="d-flex flex-column w-50 gap-4" @submit.prevent>
+                        <input type="email">
+                        <button>subscribe</button>
+                    </form>
+                    <span>(We do not share your data with anybody, and only use it for its intended purpose)</span>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -596,6 +606,45 @@ import { store } from '../data/store';
                 transform: translate(-50%, -50%);
                 width: 60%;
                 padding: 5px 0;
+            }
+        }
+    }
+    .email-form{
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+        .background-email{
+            img{
+                width: 2000px;
+                height: 400px;
+            }
+        }
+        .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h2{
+                font-weight: 700;
+                color: $mydarkGrey;
+            }
+            span{
+                color: $mygrey;
+                font-size: 0.9rem;
+            }
+            input{
+                border: 1px solid lightgrey;
+                height: 50px;
+                border-radius: 5px;
+            }
+            button{
+                color: white;
+                text-transform: uppercase;
+                font-weight: 600;
+                background-color: $mygreen;
+                border: transparent;
+                padding: 10px 30px;
+                border-radius: 20px;
             }
         }
     }
