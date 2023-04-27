@@ -144,8 +144,15 @@
         </section>
         <!-- TESTIMONIALS -->
         <section class="testimonials">
-            <div class="container text-center">
-                TESTIMONIAL
+            <div class="background-testimonials">
+                <img src="/images/testimonial-background.jpg" alt="">
+                <div class="content d-flex flex-column justify-content-center align-items-center debug">
+                    <h1>Testimonials</h1>
+                    <span>Here’s what our happy drivers had to say about our services:</span>
+                    <h1>CAROUSEL HERE</h1>
+                    <p class="text-center fst-italic">Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended.</p>
+                    <h5>(testimonial name)</h5>
+                </div>
             </div>
         </section>
         <!-- LATEST NEWS -->
@@ -292,7 +299,7 @@ import { store } from '../data/store';
         
     }
     .courses{
-        height: 1850px;
+        height: 1870px;
 
         .choose-course{
             height: 700px;
@@ -447,6 +454,7 @@ import { store } from '../data/store';
                 margin-top: 80px;
             }
             .card{
+                z-index: 2;
                 padding: 40px;
                 border-top-right-radius: 8px;
                 border-top-left-radius: 8px;
@@ -480,6 +488,31 @@ import { store } from '../data/store';
     .testimonials{
         height: 850px;
         border: 1px solid red;
+        overflow: hidden;
+        .background-testimonials{
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
+                object-position: top;
+            }
+            .content{
+                position: absolute;
+                top:40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $mygrey;
+                font-size: 1.3rem;
+                font-weight: 500;
+                h1{
+                font-weight: 700;
+                color: $mydarkGrey;
+                }
+                h5{
+                    font-weight: 700;
+                }
+            }
+        }
     }
     .latest-news{
         height: 850px;
