@@ -111,8 +111,35 @@
                     </div>
                 </div>
             </div>
-            <div class="instructors container text-center">
-                OUR INSTRUCTORS
+            <!-- INSTRUCTORS -->
+            <div class="instructors container">
+                <div class="row p-3 d-flex align-items-center">
+                    <div class="col-8 px-5">
+                        <h1 class="mt-3">Your Instructors</h1>
+                        <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices auctor sapien id cursus. Aliquam maximus turpis in vehicula semper.</p>
+                    </div>
+                    <div class="col-4">
+                        <button>more about us</button>
+                    </div>
+                </div>
+                <div class="row px-5" id="row-instructors">
+                    <div class="col-4 py-4" v-for="instructor in store.instructors">
+                        <div class="card">
+                            <div class="card-image d-flex justify-content-center">
+                                <img :src="'/images/' + instructor.image" alt="">
+                            </div>
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center gap-3">
+                                <h4>{{ instructor.name }}</h4>
+                                <div class="social d-flex gap-4">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <span class="text-center">{{ instructor.description }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- TESTIMONIALS -->
@@ -265,7 +292,7 @@ import { store } from '../data/store';
         
     }
     .courses{
-        height: 1900px;
+        height: 1850px;
 
         .choose-course{
             height: 700px;
@@ -396,8 +423,58 @@ import { store } from '../data/store';
             }
         }
         .instructors{
-            height: 800px;
-            border: 1px solid blue;
+            height: 700px;
+            margin-top: 100px;
+            h1{
+                font-weight: 700;
+                color: $mydarkGrey;
+            }
+            p{
+                color: $mygrey;
+                font-size: 1.4rem;
+            }
+            button{
+                color: white;
+                text-transform: uppercase;
+                font-weight: 600;
+                background-color: $mygreen;
+                border: transparent;
+                padding: 10px 30px;
+                border-radius: 20px;
+                width: 100%;
+            }
+            #row-instructors{
+                margin-top: 80px;
+            }
+            .card{
+                padding: 40px;
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
+                border-bottom-right-radius: 12px;
+                border-bottom-left-radius: 12px;
+                box-shadow: rgba(100, 100, 111, 0.5) 0px 15px 10px 0px, $mygreen 0 -8px ;
+                .card-image{
+                    img{
+                        width: 320px;
+                        height: 200px;
+                        padding: 0 10px;
+                    }
+                }
+                .card-body{
+                    padding: 30px;;
+                    h4{
+                        color: $mydarkGrey;
+                        font-weight: 700;
+                    }
+                    span{
+                        color: $mygrey
+                    }
+                    i{
+                        color: $mygrey;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
         }
     }
     .testimonials{

@@ -30,17 +30,20 @@ export const store = reactive({
         {
             id: 1,
             name: 'Mike Hart',
-            image: 'instructor-mikehart.jpg'
+            image: 'instructor-mikehart.jpg',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
         },
         {   
             id:2,
             name: 'John Smith',
-            image: 'instructor-johnsmith.jpg'
+            image: 'instructor-johnsmith.jpg',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
         },
         {   
             id: 3,
             name: 'Angela Hart',
-            image: 'instructor-angelahart.jpg'
+            image: 'instructor-angelahart.jpg',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
         }
     ],
     testimonials: [
