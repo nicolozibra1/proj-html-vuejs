@@ -157,8 +157,25 @@
         </section>
         <!-- LATEST NEWS -->
         <section class="latest-news">
-            <div class="container text-center">
-                LATEST NEWS
+            <div class="background-news">
+                <img src="/images/latestnews-background.jpg" id="background" alt="">
+                <div class="card container">
+                    <h1 class="text-center">Latest News</h1>
+                    <div class="row px-5 d-flex justify-content-center">
+                        <div class="col-6 p-2" v-for="news in store.latestNews">
+                            <div class="card-image d-flex justify-content-center">
+                                <img :src="'/images/' + news.image" alt="">
+                            </div>
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <h4>{{ news.title }}</h4>
+                                <span class="date">{{ news.date }} | <span class="comments">{{ news.comments }} Comments</span></span>
+                                <p>{{ news.content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button>more from the blog</button>    
+                </div>
+                <img src="/images/latestnews-bottom.png" alt="" id="img-bottom">
             </div>
         </section>
         <!-- CALL2ACTION -->
@@ -516,7 +533,71 @@ import { store } from '../data/store';
     }
     .latest-news{
         height: 850px;
-        border: 1px solid red;
+        .background-news{
+            height: 100%;
+            position: relative;
+            #background{
+                width: 100%;
+                height: 100%;
+            }
+            h1{
+                font-weight: 700;
+                color: $mydarkGrey;
+                margin-top: 70px;
+                margin-bottom: 40px;
+            }
+            .card{
+                height: 85%;
+                width: 60%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-top: -120px;
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                box-shadow: rgba(100, 100, 111, 0.5) 0px 15px 10px 0px, $mygrey 0 -8px ;
+                img{
+                    width: 90%;
+                }
+                h4{
+                    color: $mygreen;
+                    font-weight: 700;
+                }
+                .date{
+                    color: $mygrey;
+                    font-size: 0.8rem;
+                }
+                .comments{
+                    color: $mygreen;
+                }
+                p{
+                    color: $mygrey;
+                    padding-top: 20px;
+                }
+            }
+            button{
+                color: white;
+                text-transform: uppercase;
+                font-weight: 600;
+                background-color: $mygreen;
+                border: transparent;
+                padding: 10px 30px;
+                border-radius: 20px;
+                width: 25%;
+                margin: auto;
+            }
+            #img-bottom{
+                position: absolute;
+                bottom:27px;
+                left:50%;
+                transform: translate(-50%, -50%);
+                width: 60%;
+                padding: 5px 0;
+            }
+        }
     }
     .debug{
         border: 1px solid blue;

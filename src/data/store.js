@@ -77,12 +77,18 @@ export const store = reactive({
         {
             id: 1,
             title: 'What Car to Start With?',
-            image: 'blog-choosecar.jpg'
+            image: 'blog-choosecar.jpg',
+            date: 'February 7th, 2019',
+            comments: 0,
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
         },
         {
             id: 2,
             title: 'Avada Driving School Expanding',
-            image: 'blog-10and2.jpg'
+            image: 'blog-10and2.jpg',
+            date: 'February 7th, 2019',
+            comments: 0,
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing'
         }
     ],
     contacts: [
