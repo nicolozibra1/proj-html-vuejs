@@ -45,8 +45,16 @@
             </div>
         </div>
         <!-- FOOTER BOTTOM -->
-        <div class="f-bottom text-center">
-            FOOTER BOTTOM
+        <div class="f-bottom">
+            <div class="content h-100 container d-flex justify-content-between align-items-center">
+                <span>© Copyright 2012 - 2023 | Avada Theme by <span class="green">ThemeFusion</span> | All Rights Reserved | Powered by <span class="green">WordPress</span></span>
+                <div class="social d-flex me-5">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>    
         </div>
    </footer>
 </template>
@@ -130,7 +138,21 @@ import { store } from '../data/store';
     }
     .f-bottom{
         height: 150px;
-        border: 1px solid red;
+        background-color: #1c1d1e;
+        span{
+            color: $mygrey;
+            font-size: 0.8rem;
+            font-weight: 600;
+            .green{
+                color: $mygreen;
+            }
+        }
+        .social{
+            color: white;
+            i{
+                padding: 10px;
+            }
+        }
     }
     .debug{
         border: 1px solid yellow;
