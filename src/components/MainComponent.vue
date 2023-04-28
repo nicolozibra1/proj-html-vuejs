@@ -153,7 +153,7 @@
                 <div class="content d-flex flex-column justify-content-center align-items-center">
                     <h1>Testimonials</h1>
                     <span class="mb-5 mt-3 fw-semibold">Here’s what our happy drivers had to say about our services:</span>
-                    <div class="box-image d-flex justify-content-center" v-for="(testimonial, index) in store.testimonials">
+                    <div class="box-image d-flex justify-content-center" v-for="(testimonial, index) in store.testimonials" @mouseover="stopScroll" @mouseleave="startCarousel">
                         <img :src="'/images/' + testimonial.image" alt="" @click="startCarousel" v-if="testimonial.id === this.current">
                     </div>
                     <p class="text-center fst-italic fw-semibold mt-4 mb-4">Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended.</p>
@@ -213,6 +213,7 @@ import { store } from '../data/store';
         data() {
             return {
                 store,
+                autoscroll: "",
                 current: 1,
                 active: 1,
                 progressValue: 0,
@@ -226,7 +227,7 @@ import { store } from '../data/store';
                 this.current = index
             },
             startCarousel() {
-                setInterval(() => {
+                this.autoscroll = setInterval(() => {
                     if (this.current < 5) {
                         this.current++
                         this.active++
@@ -236,6 +237,10 @@ import { store } from '../data/store';
                         this.active = 1
                     }
                 }, 2000)
+            },
+            stopScroll() {
+                clearInterval(this.autoscroll);
+                this.isPaused = true;
             },
             loader1() {
                 let progress = setInterval(() => {
@@ -676,6 +681,7 @@ import { store } from '../data/store';
                 }
             }
             .box-image{
+                cursor: pointer;
                 img{
                     width: 45%;
                 }
