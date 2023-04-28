@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main v-on:scroll="handleScroll">
         <!-- HERO -->
         <section class="hero d-flex justify-content-center align-items-center">
             <div class="box-hero">
@@ -52,9 +52,9 @@
             </div>
         </div>
         <!-- COURSES -->
-        <section class="courses">
+        <section class="courses" @mouseover="loader1">
             <!-- CHOOSE-COURSE -->
-            <div class="choose-course">
+            <div class="choose-course" @mouseover="loader2">
                 <div class="box-background-course">
                     <img class="background" src="/images/promise-background.jpg" alt="">
                     <img class="svg" src="/images/driving-triangle.svg" alt="">
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <!-- STATISTICS -->
-            <div class="statistics container text-center">
+            <div class="statistics d-flex justify-content-center text-center">
                 <div class="row h-100 px-5 py-4 m-0 container d-flex justify-content-center">
                     <div class="col-4 h-100 p-2">
                         <div class="card">
@@ -174,7 +174,7 @@
                     <h1 class="text-center">Latest News</h1>
                     <div class="row px-5 d-flex justify-content-center">
                         <div class="col-6 py-2 px-4" v-for="news in store.latestNews">
-                            <div class="card-image d-flex justify-content-center debug">
+                            <div class="card-image d-flex justify-content-center">
                                 <img :src="'/images/' + news.image" alt="">
                             </div>
                             <div class="card-body d-flex flex-column align-items-center">
@@ -237,36 +237,34 @@ import { store } from '../data/store';
                     }
                 }, 2000)
             },
-            loader1(){
-                if(this.progressValue < this.progressiveEndValue) {
-                    let progress = setInterval(() => {
-                        this.progressValue++
-                        this.$refs.valueContainer.textContent = `${this.progressValue}%`
-                        this.$refs.progressBar.style.background = `conic-gradient(
-                            #7ABC64 ${this.progressValue * 3.6}deg, 
-                            #F6F6F6 ${this.progressValue * 3.6}deg
-                            )`;
-                        if(this.progressValue == this.progressiveEndValue){
-                            clearInterval(progress)
-                        }    
-                    }, this.speed);
-                }    
+            loader1() {
+                let progress = setInterval(() => {
+                    if (this.progressValue >= this.progressiveEndValue) {
+                        clearInterval(progress);
+                        return;
+                    }
+                    this.progressValue++;
+                    this.$refs.valueContainer.textContent = `${this.progressValue}%`;
+                    this.$refs.progressBar.style.background = `conic-gradient(
+                    #7ABC64 ${this.progressValue * 3.6}deg, 
+                    #F6F6F6 ${this.progressValue * 3.6}deg
+                    )`;
+                }, this.speed);
             },
-            loader2(){
-                if(this.progressValue < this.progressiveEndValue2) {
-                    let progress = setInterval(() => {
-                        this.progressValue++
-                        this.$refs.valueContainer2.textContent = `${this.progressValue}%`
-                        this.$refs.progressBar2.style.background = `conic-gradient(
-                            #7ABC64 ${this.progressValue * 3.6}deg, 
-                            #F6F6F6 ${this.progressValue * 3.6}deg
-                            )`;
-                        if(this.progressValue == this.progressiveEndValue2){
-                            clearInterval(progress)
-                        }    
-                    }, this.speed);
-                }    
-            }
+            loader2() {
+                let progress = setInterval(() => {
+                    if (this.progressValue >= this.progressiveEndValue2) {
+                        clearInterval(progress);
+                        return;
+                    }
+                    this.progressValue++;
+                    this.$refs.valueContainer2.textContent = `${this.progressValue}%`;
+                    this.$refs.progressBar2.style.background = `conic-gradient(
+                    #7ABC64 ${this.progressValue * 3.6}deg, 
+                    #F6F6F6 ${this.progressValue * 3.6}deg
+                    )`;
+                }, this.speed);
+            },
         },
         mounted() {
             this.startCarousel()
@@ -274,8 +272,6 @@ import { store } from '../data/store';
             let valueContainer = this.$refs.valueContainer;
             let progressBar2 = this.$refs.progressBar2;
             let valueContainer2 = this.$refs.valueContainer2;
-            this.loader1();
-            this.loader2();
         }
     }
 </script>
