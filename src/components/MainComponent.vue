@@ -87,16 +87,20 @@
                 <div class="row h-100 px-5 py-4 m-0 container d-flex justify-content-center">
                     <div class="col-4 h-100 p-2">
                         <div class="card">
-                            <div class="circle d-flex justify-content-center align-items-center">
-                                <span>95%</span>
+                            <div class="circular-progress" ref="progressBar">
+                                <div class="value-container" ref="valueContainer">
+                                    <span>0%</span>
+                                </div>
                             </div>
                             <h6>pass rate</h6>
                         </div>
                     </div>
                     <div class="col-4 h-100 p-2">
                         <div class="card">
-                            <div class="circle d-flex justify-content-center align-items-center">
-                                <span>100%</span>
+                            <div class="circular-progress" ref="progressBar2">
+                                <div class="value-container" ref="valueContainer2">
+                                    <span>0%</span>
+                                </div>
                             </div>
                             <h6>referral rate</h6>
                         </div>
@@ -210,7 +214,11 @@ import { store } from '../data/store';
             return {
                 store,
                 current: 1,
-                active: 1
+                active: 1,
+                progressValue: 0,
+                progressiveEndValue: 95,
+                progressiveEndValue2: 100,
+                speed: 50,
             }
         },
         methods: {
@@ -228,10 +236,46 @@ import { store } from '../data/store';
                         this.active = 1
                     }
                 }, 2000)
+            },
+            loader1(){
+                if(this.progressValue < this.progressiveEndValue) {
+                    let progress = setInterval(() => {
+                        this.progressValue++
+                        this.$refs.valueContainer.textContent = `${this.progressValue}%`
+                        this.$refs.progressBar.style.background = `conic-gradient(
+                            #7ABC64 ${this.progressValue * 3.6}deg, 
+                            #F6F6F6 ${this.progressValue * 3.6}deg
+                            )`;
+                        if(this.progressValue == this.progressiveEndValue){
+                            clearInterval(progress)
+                        }    
+                    }, this.speed);
+                }    
+            },
+            loader2(){
+                if(this.progressValue < this.progressiveEndValue2) {
+                    let progress = setInterval(() => {
+                        this.progressValue++
+                        this.$refs.valueContainer2.textContent = `${this.progressValue}%`
+                        this.$refs.progressBar2.style.background = `conic-gradient(
+                            #7ABC64 ${this.progressValue * 3.6}deg, 
+                            #F6F6F6 ${this.progressValue * 3.6}deg
+                            )`;
+                        if(this.progressValue == this.progressiveEndValue2){
+                            clearInterval(progress)
+                        }    
+                    }, this.speed);
+                }    
             }
         },
         mounted() {
             this.startCarousel()
+            let progressBar = this.$refs.progressBar;
+            let valueContainer = this.$refs.valueContainer;
+            let progressBar2 = this.$refs.progressBar2;
+            let valueContainer2 = this.$refs.valueContainer2;
+            this.loader1();
+            this.loader2();
         }
     }
 </script>
@@ -492,6 +536,30 @@ import { store } from '../data/store';
                         font-weight: 600;
                         color: $mygrey;
                     }
+                }
+                .circular-progress{
+                    position: relative;
+                    height: 220px;
+                    width: 220px;
+                    background-color: $mylightGrey;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .circular-progress::before{
+                    content: "";
+                    position: absolute;
+                    height: 92%;
+                    width: 92%;
+                    background-color: white;
+                    border-radius: 50%;
+                }
+                .value-container{
+                position: relative;
+                font-size: 2.5rem;
+                font-weight: 600;
+                color: $mygrey;
                 }
                 h6{
                     margin-top: 0px;
