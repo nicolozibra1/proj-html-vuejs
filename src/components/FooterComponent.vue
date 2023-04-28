@@ -113,6 +113,7 @@ import { store } from '../data/store';
             }
             .contacts{
                 li{
+                    transition: color 0.4s;
                     &:hover{
                     cursor: pointer;
                     color: white;
@@ -124,6 +125,7 @@ import { store } from '../data/store';
                 font-size: 1rem;
                 padding: 8px;
                 border-bottom: 2px solid transparent;
+                transition: color 0.4s;
                 &:hover{
                     color: white;
                 }
@@ -144,6 +146,7 @@ import { store } from '../data/store';
                 border-radius: 20px;
                 border: transparent;
                 padding: 10px 30px;
+                transition: background-color 0.8s, box-shadow 0.8s;
                 &:hover{
                     background-color: #7abc64b7;
                     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -167,6 +170,7 @@ import { store } from '../data/store';
             color: white;
             i{
                 padding: 10px;
+                transition: color 0.4s;
                 &:hover{
                     color: $mygreen;
                     cursor: pointer;

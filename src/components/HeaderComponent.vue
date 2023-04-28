@@ -69,6 +69,7 @@ import { store } from '../data/store';
                 padding: 10px 8px;
                 cursor: pointer;
                 border-bottom: 2px solid transparent;
+                transition: box-shadow 0.8s;
                 &:hover{
                     box-shadow: inset 0 -2px 0 $mygreen;
                 }
@@ -82,6 +83,7 @@ import { store } from '../data/store';
                 text-transform: uppercase;
                 font-weight: 700;
                 font-size: 0.9rem;
+                transition: color 0.8s;
             }
         }
         .book-now{
@@ -93,6 +95,7 @@ import { store } from '../data/store';
                 border-radius: 20px;
                 border: transparent;
                 padding: 10px 30px;
+                transition: background-color 0.8s, box-shadow 0.8s;
                 &:hover{
                     background-color: #7abc64b7;
                     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;

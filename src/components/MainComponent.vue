@@ -173,7 +173,7 @@
                 <div class="card container">
                     <h1 class="text-center">Latest News</h1>
                     <div class="row px-5 d-flex justify-content-center">
-                        <div class="col-6 py-2 px-4 debug" v-for="news in store.latestNews">
+                        <div class="col-6 py-2 px-4" v-for="news in store.latestNews">
                             <div class="card-image d-flex justify-content-center debug">
                                 <img :src="'/images/' + news.image" alt="">
                             </div>
@@ -351,6 +351,7 @@ import { store } from '../data/store';
                     border: transparent;
                     padding: 10px 30px;
                     border-radius: 20px;
+                    transition: background-color 0.8s, box-shadow 0.8s;
                     &:hover{
                         background-color: #7abc64b7;
                         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -447,6 +448,7 @@ import { store } from '../data/store';
                         padding: 10px 30px;
                         border-radius: 20px;
                         border: transparent;
+                        transition: background-color 0.8s, box-shadow 0.8s;
                         &:hover{
                             background-color: #7abc64b7;
                             box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -481,6 +483,8 @@ import { store } from '../data/store';
                     img{
                         width: 100%;
                         height: 100%;
+                        cursor: pointer;
+                        transition: scale 1s;
                         &:hover{
                             scale: 1.3;
                         }
@@ -502,6 +506,7 @@ import { store } from '../data/store';
                         color: $mygrey;
                         padding: 5px 15px;
                         border-radius: 20px;
+                        transition: border-color 0.8s, color 0.8s;
                         &:hover{
                             border-color: $mygreen;
                             color: $mygreen;
@@ -589,6 +594,7 @@ import { store } from '../data/store';
                 padding: 10px 30px;
                 border-radius: 20px;
                 width: 100%;
+                transition: background-color 0.8s, box-shadow 0.8s;
                 &:hover{
                     background-color: #7abc64b7;
                     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -610,6 +616,8 @@ import { store } from '../data/store';
                         width: 320px;
                         height: 200px;
                         padding: 0 10px;
+                        cursor: pointer;
+                        transition: scale 1s, box-shadow 1s;
                         &:hover{
                             scale: 1.1;
                             box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
@@ -628,6 +636,7 @@ import { store } from '../data/store';
                     i{
                         color: $mygrey;
                         font-size: 1.1rem;
+                        transition: color 0.4s, scale 0.4s;
                         &:hover{
                             color: $mygreen;
                             scale: 1.3;
@@ -718,6 +727,8 @@ import { store } from '../data/store';
                     overflow: hidden;
                     img{
                         width: 100%;
+                        transition: scale 1.2s;
+                        cursor: pointer;
                         &:hover{
                             overflow: hidden;
                             scale: 1.2;
@@ -750,6 +761,7 @@ import { store } from '../data/store';
                 border-radius: 20px;
                 width: 25%;
                 margin: auto;
+                transition: background-color 0.8s, box-shadow 0.8s;
                 &:hover{
                     background-color: #7abc64b7;
                     box-shadow: rgb(38, 57, 77) 0px 20px 20px -10px;
@@ -801,6 +813,7 @@ import { store } from '../data/store';
                 border: transparent;
                 padding: 10px 30px;
                 border-radius: 20px;
+                transition: background-color 0.8s, box-shadow 0.8s;
                 &:hover{
                     background-color: #7abc64b7;
                     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
