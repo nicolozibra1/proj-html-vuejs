@@ -219,7 +219,7 @@ import { store } from '../data/store';
                 progressValue: 0,
                 progressiveEndValue: 95,
                 progressiveEndValue2: 100,
-                speed: 50,
+                speed: 100,
             }
         },
         methods: {
