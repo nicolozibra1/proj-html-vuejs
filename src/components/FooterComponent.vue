@@ -17,7 +17,7 @@
                     <!-- CONTACT -->
                     <div class="col-3">
                         <h6>contact details</h6>
-                        <ul class="list-unstyled d-flex flex-column" v-for="contact in store.contacts">
+                        <ul class="contacts list-unstyled d-flex flex-column" v-for="contact in store.contacts">
                             <li><i class="fa-solid fa-house-chimney"></i> <span>{{ contact.address }}</span></li>
                             <li><i class="fa-solid fa-phone"></i> {{ contact.number }}</li>
                             <li><i class="fa-regular fa-envelope"></i> {{ contact.email }}</li>
@@ -111,10 +111,22 @@ import { store } from '../data/store';
                 color: $mygrey;
                 font-weight: 600;
             }
+            .contacts{
+                li{
+                    &:hover{
+                    cursor: pointer;
+                    color: white;
+                    }
+                }
+            }
             #links, #links a{
                 color: $mygreen;
                 font-size: 1rem;
                 padding: 8px;
+                border-bottom: 2px solid transparent;
+                &:hover{
+                    color: white;
+                }
             }
             .box-image{
                 img{
@@ -132,7 +144,10 @@ import { store } from '../data/store';
                 border-radius: 20px;
                 border: transparent;
                 padding: 10px 30px;
-                
+                &:hover{
+                    background-color: #7abc64b7;
+                    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                }    
             }
         }
     }
@@ -145,12 +160,17 @@ import { store } from '../data/store';
             font-weight: 600;
             .green{
                 color: $mygreen;
+                cursor: pointer;
             }
         }
         .social{
             color: white;
             i{
                 padding: 10px;
+                &:hover{
+                    color: $mygreen;
+                    cursor: pointer;
+                }
             }
         }
     }

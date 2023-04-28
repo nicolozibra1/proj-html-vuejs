@@ -169,8 +169,8 @@
                 <div class="card container">
                     <h1 class="text-center">Latest News</h1>
                     <div class="row px-5 d-flex justify-content-center">
-                        <div class="col-6 p-2" v-for="news in store.latestNews">
-                            <div class="card-image d-flex justify-content-center">
+                        <div class="col-6 py-2 px-4 debug" v-for="news in store.latestNews">
+                            <div class="card-image d-flex justify-content-center debug">
                                 <img :src="'/images/' + news.image" alt="">
                             </div>
                             <div class="card-body d-flex flex-column align-items-center">
@@ -307,6 +307,10 @@ import { store } from '../data/store';
                     border: transparent;
                     padding: 10px 30px;
                     border-radius: 20px;
+                    &:hover{
+                        background-color: #7abc64b7;
+                        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                    }
                 }
             }
         }
@@ -398,7 +402,11 @@ import { store } from '../data/store';
                         background-color: $mygreen;
                         padding: 10px 30px;
                         border-radius: 20px;
-                        border: transparent
+                        border: transparent;
+                        &:hover{
+                            background-color: #7abc64b7;
+                            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                        }
                     }
                     .tringle{
                         width: 0; 
@@ -425,9 +433,13 @@ import { store } from '../data/store';
                 .card-image{
                     width: 200px;
                     height: 200px;
+                    overflow: hidden;
                     img{
                         width: 100%;
                         height: 100%;
+                        &:hover{
+                            scale: 1.3;
+                        }
                     }
                 }
                 .card-body{
@@ -446,6 +458,10 @@ import { store } from '../data/store';
                         color: $mygrey;
                         padding: 5px 15px;
                         border-radius: 20px;
+                        &:hover{
+                            border-color: $mygreen;
+                            color: $mygreen;
+                        }
                     }
                 }
             }
@@ -505,6 +521,10 @@ import { store } from '../data/store';
                 padding: 10px 30px;
                 border-radius: 20px;
                 width: 100%;
+                &:hover{
+                    background-color: #7abc64b7;
+                    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                }
             }
             #row-instructors{
                 margin-top: 80px;
@@ -522,6 +542,10 @@ import { store } from '../data/store';
                         width: 320px;
                         height: 200px;
                         padding: 0 10px;
+                        &:hover{
+                            scale: 1.1;
+                            box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+                        }
                     }
                 }
                 .card-body{
@@ -536,6 +560,12 @@ import { store } from '../data/store';
                     i{
                         color: $mygrey;
                         font-size: 1.1rem;
+                        &:hover{
+                            color: $mygreen;
+                            scale: 1.3;
+                            cursor: pointer;
+
+                        }
                     }
                 }
             }
@@ -543,7 +573,6 @@ import { store } from '../data/store';
     }
     .testimonials{
         height: 850px;
-        border: 1px solid red;
         overflow: hidden;
         .background-testimonials{
             position: relative;
@@ -617,8 +646,15 @@ import { store } from '../data/store';
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
                 box-shadow: rgba(100, 100, 111, 0.5) 0px 15px 10px 0px, $mygrey 0 -8px ;
-                img{
-                    width: 90%;
+                .card-image{
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        &:hover{
+                            overflow: hidden;
+                            scale: 1.2;
+                        }
+                    }
                 }
                 h4{
                     color: $mygreen;
@@ -646,6 +682,10 @@ import { store } from '../data/store';
                 border-radius: 20px;
                 width: 25%;
                 margin: auto;
+                &:hover{
+                    background-color: #7abc64b7;
+                    box-shadow: rgb(38, 57, 77) 0px 20px 20px -10px;
+                }
             }
             #img-bottom{
                 position: absolute;
@@ -693,6 +733,10 @@ import { store } from '../data/store';
                 border: transparent;
                 padding: 10px 30px;
                 border-radius: 20px;
+                &:hover{
+                    background-color: #7abc64b7;
+                    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                }
             }
         }
     }

@@ -10,7 +10,7 @@
             <div class="box-logo">
                 <img src="/images/avada-drivers-logo-1x.png" alt="">
             </div>
-            <div class="navbar">
+            <div class="navbar d-flex gap-4">
                 <ul v-for="link in store.navLinks" class="list-unstyled mt-3">
                     <li class="text-white"><a href="#">{{ link }}</a></li>
                 </ul>
@@ -38,7 +38,7 @@ import { store } from '../data/store';
 @use '../assets/styles/partials/variables' as *;
     .call2action{
         height: 50px;
-        background-color: $mydarkGrey;
+        background-color: rgb(37, 37, 37);
         span{
             color: $mygrey;
             font-size: 0.9rem;
@@ -54,11 +54,11 @@ import { store } from '../data/store';
         width: 100%;
         position: absolute;
         top: 50px;
-        background-color: rgba(66, 66, 66, 0.521);
+        background-color: rgba(46, 46, 46, 0.521);
 
         .box-logo{
-            width: 280px;
-            height: 60px;
+            width: 250px;
+            height: 50px;
             img{
                 width: 100%;
                 height: 100%;
@@ -66,13 +66,22 @@ import { store } from '../data/store';
         }
         .navbar{
             li{
-                padding-right: 50px;
+                padding: 10px 8px;
+                cursor: pointer;
+                border-bottom: 2px solid transparent;
+                &:hover{
+                    box-shadow: inset 0 -2px 0 $mygreen;
+                }
+                &:hover a{
+                    color: $mygreen;
+                }
             }
             a{
                 color: white;
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: 700;
+                font-size: 0.9rem;
             }
         }
         .book-now{
@@ -83,10 +92,16 @@ import { store } from '../data/store';
                 background-color: $mygreen;
                 border-radius: 20px;
                 border: transparent;
-                padding: 10px 30px;;
-                
+                padding: 10px 30px;
+                &:hover{
+                    background-color: #7abc64b7;
+                    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                }
             }
             
         }
+    }
+    .debug{
+        border: 1px solid red;
     }
 </style>
