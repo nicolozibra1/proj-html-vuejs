@@ -146,12 +146,19 @@
         <section class="testimonials">
             <div class="background-testimonials">
                 <img src="/images/testimonial-background.jpg" alt="">
-                <div class="content d-flex flex-column justify-content-center align-items-center debug">
+                <div class="content d-flex flex-column justify-content-center align-items-center">
                     <h1>Testimonials</h1>
-                    <span>Here’s what our happy drivers had to say about our services:</span>
-                    <h1>CAROUSEL HERE</h1>
-                    <p class="text-center fst-italic">Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended.</p>
-                    <h5>(testimonial name)</h5>
+                    <span class="mb-5 mt-3 fw-semibold">Here’s what our happy drivers had to say about our services:</span>
+                    <div class="box-image d-flex justify-content-center" v-for="(testimonial, index) in store.testimonials">
+                        <img :src="'/images/' + testimonial.image" alt="" @click="startCarousel" v-if="testimonial.id === this.current">
+                    </div>
+                    <p class="text-center fst-italic fw-semibold mt-4 mb-4">Avada Driving School really helped build my confidence behind the wheel and with driving in general, and they got me a first time pass! Highly recommended.</p>
+                    <div class="box-name" v-for="(testimonial, index) in store.testimonials">
+                        <h5 class="text-capitalize" v-if="testimonial.id === this.current">{{ testimonial.name }}</h5>
+                    </div>
+                    <div class="current-image d-flex gap-2 mt-4">
+                        <span class="circle" v-for="(testimonial, index) in store.testimonials" :class="{ 'active': index === current - 1 }"></span>
+                    </div>   
                 </div>
             </div>
         </section>
@@ -202,7 +209,29 @@ import { store } from '../data/store';
         data() {
             return {
                 store,
+                current: 1,
+                active: 1
             }
+        },
+        methods: {
+            currentImage(index){
+                this.current = index
+            },
+            startCarousel() {
+                setInterval(() => {
+                    if (this.current < 5) {
+                        this.current++
+                        this.active++
+                    } 
+                    else {
+                        this.current = 1
+                        this.active = 1
+                    }
+                }, 2000)
+            }
+        },
+        mounted() {
+            this.startCarousel()
         }
     }
 </script>
@@ -538,6 +567,25 @@ import { store } from '../data/store';
                 h5{
                     font-weight: 700;
                 }
+                p{
+                    padding: 0px 150px;
+                    font-size: 1.1rem;
+                    letter-spacing: 1px;;
+                }
+            }
+            .box-image{
+                img{
+                    width: 45%;
+                }
+            }
+            .circle{
+                width: 12px;
+                height: 12px;
+                border: 1px solid $mygrey;
+                border-radius: 50%;
+            }
+            .active{
+                background-color: $mygrey;
             }
         }
     }

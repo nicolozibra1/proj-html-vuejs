@@ -49,27 +49,27 @@ export const store = reactive({
     testimonials: [
         {
             id: 1,
-            name: 'grant',
+            name: 'grant harvey',
             image: 'testimonial-grant.png'
         },
         {
             id:2,
-            name: 'harold',
+            name: 'harold green',
             image: 'testimonial-harold.png'
         },
         {
             id:3,
-            name: 'kate',
+            name: 'kate lewis',
             image: 'testimonial-kate.png'
         },
         {
             id:4,
-            name: 'kelly',
+            name: 'kelly johnson',
             image: 'testimonial-kelly.png'
         },
         {
             id:5,
-            name: 'sophia',
+            name: 'sophia jones',
             image: 'testimonial-sophia.png'
         }
     ],
